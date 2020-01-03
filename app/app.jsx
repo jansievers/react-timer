@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
-var Main = require('Main');
-var Countdown = require('Countdown');
-var Timer = require('Timer');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const {Route, Router, IndexRoute, hashHistory} = require('react-router');
+const Main = require('Main');
+const Countdown = require('Countdown');
+const Timer = require('Timer');
 
 // Load foundation
-require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
 // App css
