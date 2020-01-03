@@ -1,18 +1,16 @@
 const React = require('react');
 
-const Controls = React.createClass({
+const ControlsTimer = React.createClass({
     propTypes: {
         countdownStatus: React.PropTypes.string.isRequired,
         onStatusChange: React.PropTypes.func.isRequired
     },
     onStatusChange: function(newState) {
-        console.log(newState);
         return () => {
             this.props.onStatusChange(newState);
         }
     },
     componentWillReceiveProps: function(newProps) {
-        console.log('componentWillReceiveProps', newProps.countdownStatus);
     },
     render: function () {
         const {countdownStatus} = this.props;
@@ -20,7 +18,7 @@ const Controls = React.createClass({
         const renderStartStopButton = () => {
             if (countdownStatus === 'started') {
                 return <button id="btnPause" className="button secondary" onClick={this.onStatusChange('paused')}>Pause</button>
-            } else if (countdownStatus === 'paused') {
+            } else {
                 return <button id="btnStart" className="button primary" onClick={this.onStatusChange('started')}>Start</button>
             }
         };
@@ -34,4 +32,4 @@ const Controls = React.createClass({
     }
 });
 
-module.exports = Controls;
+module.exports = ControlsTimer;
